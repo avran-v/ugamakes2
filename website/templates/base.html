@@ -7,21 +7,25 @@
        <link rel = "stylesheet" href="{{ url_for('static', filename='/styles/style2.css') }}">
        <title>{% block title %}Home{% endblock %}</title>
        <link rel="preconnect" href="https://fonts.googleapis.com">
+       <script type="text/javascript" src="{{ url_for('static', filename='script.js')}}"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Handlee&display=swap" rel="stylesheet">
    </head>
    <body>
-      <div class="header">
-       <nav>
-           <a id="login" href="/">About Us</a> 
-           <a id="signUp" href="/calculator">CO2 calculator</a> 
-           <a id="logout" href="/involvement">Get Involved</a> 
-        </nav>
-      </div>
-        <div>
+      <div class="top">
+         <nav class="title">
+           <label class="logo">BlueX</label>
+           <ul>
+             <li><a href="/">About Us</a></li>
+             <li><a href="/calculator">C02 Calculator</a></li>
+             <li><a href="/involvement">Get Involved</a></li>
+         </nav>
+         </div>
+        <div> 
            {% block content %}
            <h1>This is the about us page!</h1>
            {% endblock %}
         </div>
+        
    </body>
 </html> 

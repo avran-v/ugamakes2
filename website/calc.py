@@ -3,6 +3,8 @@ import requests
 
 from . import creds
 
+mapsKey = creds.google_key
+
 calc = Blueprint('calculator', __name__)
 
 def configure():
@@ -15,7 +17,29 @@ def calculator():
     carbon_equiv = 0 
     price = 0
     place1 = request.form.get('origin')
+    if isinstance(place1, str):
+        
+        place1 = place1.split(', USA')
+        place1 = [part.strip() for part in place1 if part.strip()]
+        place1 = ', '.join(place1)
+        print(place1)
+    #place1 = place1.split(', ')[0]
+    #city_state_country = place1.split(', ')[0]
+    
+
+
+    
+    #place2 = place2.split(', ')[0]
+    #city_state_country2 = place2.split(', ')[0]
     place2 = request.form.get('destination')
+    if isinstance(place2, str):
+        
+        place2= place2.split(', USA')
+        place2 = [part2.strip() for part2 in place2 if part2.strip()]
+        place2 = ', '.join(place2)
+        print(place2)
+        
+
     transport = request.form.get('transportmode')
     print(transport)
     if request.method == 'POST':
@@ -25,7 +49,7 @@ def calculator():
     print("Cost to Counterbalance:", price)
    
         
-    return render_template("calculator.html", carbon_equiv=carbon_equiv, price=price)
+    return render_template("calculator.html", carbon_equiv=carbon_equiv, price=price, mapsKey=mapsKey)
 
 
 def distanceCalc(origin, destination,modeOfTransport):

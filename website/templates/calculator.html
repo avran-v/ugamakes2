@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 {% block title %}CO2 Calculator{% endblock %}
 {% block content %}<h1 class="test">This is the calculator page!</h1>
+ 
+<head>
+    <script type="text/javascript"
+    
+      src="https://maps.googleapis.com/maps/api/js?key={{mapsKey}}&libraries=places">
+      
+  
+      </script>
+  </head>
+  
 <form method="POST">
     <h3>CO2 Calculator</h3>
     <div>
@@ -21,6 +31,32 @@
             placeholder="Enter destination location"
         />
     </div>
+    <script>
+   function init() {
+      var input = document.getElementById('origin');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      var input2 = document.getElementById('destination');
+      var autocomplete2 = new google.maps.places.Autocomplete(input2);
+    }
+
+    function initialize() {
+      var options = {
+        types: ['geocode'],
+        componentRestrictions: { country: ['us'] }
+      };
+
+      var input = document.getElementById('origin');
+      var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+      var input2 = document.getElementById('destination');
+      var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+    }
+    google.maps.event.addDomListener(window, 'load', init);
+    initialize();
+    </script>
+
+
+
     <div>
         <label>Mode of Transport</label>
         <input type="radio" id="flight" name="transportmode" value="FromFlight">
@@ -40,8 +76,45 @@
     <button type="submit">Submit</button>
 </form>
 
-
-
+<div class="output">
+    <div class="leftoutput">
+      <h3>Your trip will generate ___ kgs of CO2 emissions.</h3>
+      <img class="cfootprint" src="https://cdn-icons-png.flaticon.com/512/4850/4850986.png">
+    </div>
+    <div class="rightoutput">
+      <div class="offsettext">
+        <p>To offset this, you can donate ___ to an emissions reduction program. 
+        Check out some of our favorite orgs. </p>
+      </div>
+      <div class="donationlinks">
+        <div class="donLink">
+          <h4> Sea Trees </h4>
+          <p>One sentence blurb about projects. 
+          <br>
+          <br>
+          <button class="donButton"><a href="https://sea-trees.org/products/restoration-donation">Donate Now</a></button></p>
+        </div>
+        <div class="donLink">
+          <h4> Sea Trees </h4>
+          <p>One sentence blurb about projects. 
+          <br>
+          <br>
+          <button class="donButton"><a href="https://sea-trees.org/products/restoration-donation">Donate Now</a></button>
+          </p>
+        </div>
+        <div class="donLink">
+          <h4> Sea Trees </h4>
+          <p>One sentence blurb about projects.
+          <br>
+          <br>
+          <button class="donButton"><a href="https://sea-trees.org/products/restoration-donation">Donate Now</a></button></p>
+        </div>
+      </div>
+      <div class="extraorgsinfo">
+        <p> Read more about them on the <a href="https://blog.hubspot.com/website/center-div-css">orgs page</a>!</p>
+      </div>
+    </div>
+  </div>
 
 {{ carbon_equiv }}
 {{ price }}

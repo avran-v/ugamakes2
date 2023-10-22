@@ -22,20 +22,100 @@
     border-radius:5px; 
 }
 
+/*
 a:link {
     color: #7adff8;
     background-color: transparent;
     text-decoration: none;
   }
   
-  a:visited {
+a:visited {
     color: #AFB3B4;
     background-color: transparent;
     text-decoration: none;
   }
   
-  a:hover {
+a:hover {
     color: #D1AEAC;
     background-color: transparent;
     text-decoration: underline;
   }
+*/
+
+  .output{
+    display:flex; 
+    flex-direction: row;
+    border:5px solid #D1AEAC; 
+    border-radius: 10px;
+    background-color: #4A989A;
+    justify-content:center; 
+    width:80%; 
+    height: 30%;
+    margin: auto;
+    text-align:center; 
+  }
+  
+  .leftoutput{
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    padding:2%; 
+    color:#245D68;
+    border-right: 1px solid rgba(209,174,172,0.7);
+  }
+  
+  .rightoutput{
+    font-weight: bold;
+    font-size: 20px;
+    color:#245D68;
+    padding:2%;
+    display:flex; 
+    flex-direction: column;
+    width:100%; 
+    justify-content: center;
+    margin:auto; 
+  }
+  
+  .cfootprint{
+    width:100%; 
+  }
+  .donationlinks{
+    display: flex;
+    flex-direction:row; 
+    justify-content: center;
+    align-items: center;
+    width:80%; 
+    margin: auto;
+  }
+  .donLink{
+    background-color: #D1AEAC;
+    border:5px solid #D1AEAC; 
+    border-radius: 10px;
+    margin:2%; 
+    color: #245D68; 
+    width:80%; 
+    height:20%;
+    padding: 2%;
+  }
+  
+  .donButton{
+    background-color: #D1AEAC;
+    border:2px solid #245D68; 
+    border-radius:10px;
+    padding: 5px;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none; 
+  }
+  
+  .donLink button :hover{
+    background-color:rgba(36, 93, 104, 0.5); 
+    border-radius:10px;
+  }
+
+  
+  
+  
+  
