@@ -115,6 +115,11 @@ a:hover {
     border-radius:10px;
   }
 
+  /*Styling for page titles!*/
+  .pageTitle{
+    font-size: 50px;
+    text-align: center;
+  }
   
   
   
