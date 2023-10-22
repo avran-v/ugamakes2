@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 {% block title %}CO2 Calculator{% endblock %}
 {% block content %}<h1 class="test">This is the calculator page!</h1>
+ 
+<head>
+    <script type="text/javascript"
+    
+      src="https://maps.googleapis.com/maps/api/js?key={{mapsKey}}&libraries=places">
+      
+  
+      </script>
+  </head>
+  
 <form method="POST">
     <h3>CO2 Calculator</h3>
     <div>
@@ -21,6 +31,32 @@
             placeholder="Enter destination location"
         />
     </div>
+    <script>
+   function init() {
+      var input = document.getElementById('origin');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      var input2 = document.getElementById('destination');
+      var autocomplete2 = new google.maps.places.Autocomplete(input2);
+    }
+
+    function initialize() {
+      var options = {
+        types: ['geocode'],
+        componentRestrictions: { country: ['us'] }
+      };
+
+      var input = document.getElementById('origin');
+      var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+      var input2 = document.getElementById('destination');
+      var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+    }
+    google.maps.event.addDomListener(window, 'load', init);
+    initialize();
+    </script>
+
+
+
     <div>
         <label>Mode of Transport</label>
         <input type="radio" id="flight" name="transportmode" value="FromFlight">
