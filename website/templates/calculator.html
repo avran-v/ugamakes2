@@ -21,7 +21,24 @@
             placeholder="Enter destination location"
         />
     </div>
+    <div>
+        <label>Mode of Transport</label>
+        <input type="radio" id="flight" name="transportmode" value="FromFlight">
+        <label for="flight">Flight</label><br>
+        <input type="radio" id="css" name="transportmode" value="FromCarTravel">
+        <label for="car">Car</label><br>
+        <input type="radio" id="javascript" name="transportmode" value="FromMotorBike">
+        <label for="motorbike">Motorbike</label>
+        <input type="radio" id="javascript" name="transportmode" value="ClassicBus">
+        <label for="bus">Bus</label>
+        <input type="radio" id="javascript" name="transportmode" value="NationalTrain">
+        <label for="train">Train</label>
+        <input type="radio" id="javascript" name="transportmode" value="Subway">
+        <label for="subway">Subway</label>
+    </div>
     <br/>
     <button type="submit">Submit</button>
 </form>
+{{ carbon_equiv }}
+{{ price }}
 {% endblock %}

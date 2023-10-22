@@ -12,14 +12,22 @@ def configure():
 @calc.route('/calculator', methods=['GET','POST'])
 def calculator():
     #add code to get data from form here
+    carbon_equiv = 0 
+    price = 0
     place1 = request.form.get('origin')
     place2 = request.form.get('destination')
+    transport = request.form.get('transportmode')
+    print(transport)
     if request.method == 'POST':
-        distanceCalc(place1, place2)
-    return render_template("calculator.html")
+        carbon_equiv = round(distanceCalc(place1, place2,transport),2)
+        price = round(total(carbon_equiv),2)
+    print(carbon_equiv)
+    print(price)
+        
+    return render_template("calculator.html", carbon_equiv=carbon_equiv, price=price)
 
 
-def distanceCalc(origin, destination):
+def distanceCalc(origin, destination,modeOfTransport):
     # Define the places
     #origin = "Atlanta, GA"
     #destination = "Chicago, IL"
@@ -56,11 +64,11 @@ def distanceCalc(origin, destination):
         print("before")
         print(f"Request to the Distance Matrix API failed with status code: {distance_matrix_response.status_code}")
 
-    return carbonCalc(distance_int)
+    return carbonCalc(distance_int,modeOfTransport)
 
 
 
-def carbonCalc(distance_int):
+def carbonCalc(distance_int,transportation):
     #CarTravel, FromFlight, FromMotorBike, FromPublicTransit
     transportation = "FromFlight"
     public = "SmallDieselCar"
@@ -127,8 +135,9 @@ def carbonCalc(distance_int):
     else:
         print(f"Request to the Carbon Footprint API failed with status code: {carbon_footprint_response.status_code}")
 
+    return carbon_equivalent
 
-
+def total(carbon_equivalent):
     companyCost = 20
     total = ((carbon_equivalent * companyCost)/1000)
-    print("This is carbon offset to donate: $", total)
+    return total 
