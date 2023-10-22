@@ -13,7 +13,7 @@
     font-family: 'Sometype Mono', monospace;
   }
   nav{
-    background:#0082e6;
+
     height:80px;
     width:100%;
   }
@@ -41,7 +41,7 @@
     text-transform:uppercase;
   }
   a.active,a:hover{
-    background:#1b9bff;
+    background:#007D83;
     transition:.5s;
   }
 

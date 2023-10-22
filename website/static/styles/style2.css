@@ -1,5 +1,5 @@
 .orgContainer{
-    border: 5px solid black; 
+    border: 5px solid #AFB3B4; 
     border-radius:10px;
     flex-direction: row;
     flex-grow:1;
@@ -119,6 +119,9 @@ a:hover {
   .pageTitle{
     font-size: 50px;
     text-align: center;
+    font-family: 'Sometype Mono', monospace;
+    color: #AFB3B4;
+  
   }
   
   
