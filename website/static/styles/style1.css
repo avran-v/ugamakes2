@@ -3,7 +3,7 @@
 }
 
 .header a{
-    color:#245D68;
+    color:#AFB3B4;
     text-decoration: none;
     font-size: 40px;
     font-family: 'Alumni Sans Collegiate One', sans-serif;
@@ -14,8 +14,7 @@ padding: 10px 140px;
 }
 
 .header {
-    background-image: linear-gradient(rgba(4,9,30,0.4),rgba(76, 105, 224, 0.4));
-    color: aqua;
+    background-color:rgb(13, 52, 60)
 }
 
 .mission{
@@ -59,4 +58,9 @@ padding: 10px 140px;
     background-color: white;
     border:2px solid black; 
     border-radius:10px; 
+}
+
+body{
+    background-color: rgba(36, 93, 104, 1);
+    ;
 }

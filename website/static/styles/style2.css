@@ -5,10 +5,35 @@
     flex-grow:1;
     margin:2px; 
     padding:5px; 
+    width: 33%;
+    color:#AFB3B4;
     
 }
 
 .allOrgs{
     display: flex;
+    text-align: center;
 }
 
+.org1picture{
+    width: 100%;
+    border-radius:5px; 
+}
+
+a:link {
+    color: #7adff8;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #AFB3B4;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #D1AEAC;
+    background-color: transparent;
+    text-decoration: underline;
+  }
