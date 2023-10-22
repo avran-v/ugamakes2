@@ -1,3 +1,27 @@
 {% extends "base.html" %}
 {% block title %}CO2 Calculator{% endblock %}
-{% block content %}<h1 class="test">This is the calculator page!</h1>{% endblock %}
+{% block content %}<h1 class="test">This is the calculator page!</h1>
+<form method="POST">
+    <h3>CO2 Calculator</h3>
+    <div>
+        <label for="origin">Origin</label>
+        <input 
+            type="text" 
+            id="origin" 
+            name="origin" 
+            placeholder="Enter origin location"
+        />
+    </div>
+    <div>
+        <label for="destination">Destination</label>
+        <input 
+            type="text" 
+            id="destination" 
+            name="destination" 
+            placeholder="Enter destination location"
+        />
+    </div>
+    <br/>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
