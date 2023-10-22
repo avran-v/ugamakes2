@@ -19,10 +19,11 @@ def calculator():
     transport = request.form.get('transportmode')
     print(transport)
     if request.method == 'POST':
-        carbon_equiv = round(distanceCalc(place1, place2,transport),2)
+        carbon_equiv = round(distanceCalc(place1, place2, transport),2)
         price = round(total(carbon_equiv),2)
-    print(carbon_equiv)
-    print(price)
+    print("Total Carbon Emissions: ", carbon_equiv)
+    print("Cost to Counterbalance:", price)
+   
         
     return render_template("calculator.html", carbon_equiv=carbon_equiv, price=price)
 
@@ -61,18 +62,20 @@ def distanceCalc(origin, destination,modeOfTransport):
         print(f"From: {origin} to {destination}: {distance_int} miles")
 
     else:
-        print("before")
+    
         print(f"Request to the Distance Matrix API failed with status code: {distance_matrix_response.status_code}")
 
     return carbonCalc(distance_int,modeOfTransport)
 
 
 
-def carbonCalc(distance_int,transportation):
+def carbonCalc(distance_int, transportation):
     #CarTravel, FromFlight, FromMotorBike, FromPublicTransit
-    transportation = "FromFlight"
-    public = "SmallDieselCar"
-
+    #transportation = "FromFlight"
+    #distance = parseFloat(document.getElementById("distance").value)
+    #selectedTransport = 'input[name="transportmode"]:checked'.value
+    #print(selectedTransport)
+    #public = "SmallDieselCar"
 
     # Define the carbon footprint API endpoint URL
     if transportation == "FromFlight":
@@ -95,9 +98,28 @@ def carbonCalc(distance_int,transportation):
             "type": "SmallMotorBike",
             "distance": distance_int
         }
-    elif transportation == "FromPublicTransit":
+    elif transportation == "ClassicBus":
         carbon_footprint_url = "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit"
-        if public == "ClassicBus":
+        carbon_footprint_params = {
+                "distance": distance_int,
+                "type": transportation
+            }
+
+    elif transportation == "NationalTrain":
+        carbon_footprint_url = "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit"
+        carbon_footprint_params = {
+                "distance": distance_int,
+                "type": transportation
+            }
+
+    elif transportation == "Subway":
+        carbon_footprint_url = "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit"
+        carbon_footprint_params = {
+                "distance": distance_int,
+                "type": transportation
+            }
+
+    ''' if public == "Bus":
             carbon_footprint_params = {
                 "distance": distance_int,
                 "type": "ClassicBus"
@@ -112,8 +134,9 @@ def carbonCalc(distance_int,transportation):
                 "distance": distance_int,
                 "type": "Subway"
             }
+            '''
     # Define the query parameters for the carbon footprint API
-
+       # print(public)
 
     # Define the headers for the RapidAPI
     carbon_footprint_headers = {
