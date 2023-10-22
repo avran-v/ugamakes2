@@ -34,7 +34,7 @@ def distanceCalc(origin, destination):
         "destinations": destination,
         "origins": origin,
         "units": "imperial",
-        "key": creds.api_key
+        "key": creds.google_key
     }
 
     # Make an HTTP GET request to the Google Maps Distance Matrix API
