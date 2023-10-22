@@ -8,30 +8,44 @@
       src="https://maps.googleapis.com/maps/api/js?key={{mapsKey}}&libraries=places">
       
   
+
       </script>
   </head>
   
-<form method="POST">
-    <h3>CO2 Calculator</h3>
+<form method="POST" style="display: flex; flex-direction: column; align-items: center;" class = "calcForm">
+  
     <div>
+      
         <label for="origin">Origin</label>
+        <br> 
         <input 
             type="text" 
             id="origin" 
             name="origin" 
-            placeholder="Enter origin location"
+            placeholder="Enter origin"
+            
         />
     </div>
+    <br>
     <div>
         <label for="destination">Destination</label>
+
+        <br>
+        
         <input 
             type="text" 
             id="destination" 
             name="destination" 
-            placeholder="Enter destination location"
+            placeholder="Enter destination"
         />
+       
     </div>
+    <br>
     <script>
+
+
+
+
    function init() {
       var input = document.getElementById('origin');
       var autocomplete = new google.maps.places.Autocomplete(input);
@@ -57,24 +71,45 @@
 
 
 
-    <div>
+<div class="radioContainer">
         <label>Mode of Transport</label>
+        <br>
         <input type="radio" id="flight" name="transportmode" value="FromFlight">
-        <label for="flight">Flight</label><br>
+        <label for="flight">Flight</label>
+        <br>
         <input type="radio" id="css" name="transportmode" value="FromCarTravel">
-        <label for="car">Car</label><br>
+        <label for="car">Car</label>
+        <br>
         <input type="radio" id="javascript" name="transportmode" value="FromMotorBike">
         <label for="motorbike">Motorbike</label>
+        <br>
         <input type="radio" id="javascript" name="transportmode" value="ClassicBus">
         <label for="bus">Bus</label>
+        <br>
         <input type="radio" id="javascript" name="transportmode" value="NationalTrain">
         <label for="train">Train</label>
+        <br>
         <input type="radio" id="javascript" name="transportmode" value="Subway">
         <label for="subway">Subway</label>
+        <br>
     </div>
     <br/>
-    <button type="submit">Submit</button>
+    <button type="submit">Calculate your Carbon Footprint</button>
+    <style>
+    button:hover {
+      background-color: #E79898; /* New background color on hover */
+      text-align: center;
+      font-family: 'Sometype Mono', monospace;
+    }
+    
+    </style>
+
+    <br>
+
+    
 </form>
+
+
 
 <div class="output">
     <div class="leftoutput">
@@ -95,19 +130,19 @@
           <button class="donButton"><a href="https://sea-trees.org/products/restoration-donation">Donate Now</a></button></p>
         </div>
         <div class="donLink">
-          <h4> Sea Trees </h4>
+          <h4> Ocean Foundation </h4>
           <p>One sentence blurb about projects. 
           <br>
           <br>
-          <button class="donButton"><a href="https://sea-trees.org/products/restoration-donation">Donate Now</a></button>
+          <button class="donButton"><a href="https://oceanfdn.org/donate/support-ocean-foundation/">Donate Now</a></button>
           </p>
         </div>
         <div class="donLink">
-          <h4> Sea Trees </h4>
+          <h4> Kelp Forest </h4>
           <p>One sentence blurb about projects.
           <br>
           <br>
-          <button class="donButton"><a href="https://sea-trees.org/products/restoration-donation">Donate Now</a></button></p>
+          <button class="donButton"><a href="https://kelpforestfoundation.org/contacts/#donate">Donate Now</a></button></p>
         </div>
       </div>
       <div class="extraorgsinfo">

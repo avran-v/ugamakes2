@@ -150,3 +150,19 @@ body{
     background-color: rgba(36, 93, 104, 1);
     ;
 }
+
+.calcForm{
+    color: #AFB3B4;
+    font-size:20px;
+    text-align: center;
+    font-family: 'Sometype Mono', monospace;
+}
+
+.radioContainer{
+    color: #AFB3B4;
+    text-anchor: middle;
+    text-align: center; /* Center-align the contents horizontally */
+    display: middle; /* Make the radio buttons display inline */
+    margin-right: 20px; /* Add some spacing between radio buttons */
+    vertical-align: middle;
+}
