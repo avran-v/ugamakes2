@@ -5,13 +5,18 @@
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel = "stylesheet" href="{{ url_for('static', filename='/style.css') }}">
        <title>{% block title %}Home{% endblock %}</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Handlee&display=swap" rel="stylesheet">
    </head>
    <body>
+      <div class="header">
        <nav>
            <a id="login" href="/">About Us</a> 
            <a id="signUp" href="/calculator">CO2 calculator</a> 
            <a id="logout" href="/involvement">Get Involved</a> 
         </nav>
+      </div>
         <div>
            {% block content %}
            <h1>This is the about us page!</h1>
