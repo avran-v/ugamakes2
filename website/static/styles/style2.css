@@ -1,0 +1,14 @@
+.orgContainer{
+    border: 5px solid black; 
+    border-radius:10px;
+    flex-direction: row;
+    flex-grow:1;
+    margin:2px; 
+    padding:5px; 
+    
+}
+
+.allOrgs{
+    display: flex;
+}
+
