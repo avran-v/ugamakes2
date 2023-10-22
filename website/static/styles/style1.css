@@ -149,6 +149,7 @@
 body{
     background-color: rgba(36, 93, 104, 1);
     ;
+    font-family: 'Sometype Mono', monospace;
 }
 
 .calcForm{
